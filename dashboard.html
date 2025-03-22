@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <button class="menu-toggle" id="menuToggle">☰</button>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                <span
+                    style="height: 30px ;width: 30px; background-color: black; border: 8px solid orangered; margin-right: 5px; border-radius: 50px;"></span>
+                Promage
+            </div>
+            <button class="sidebar-close" id="sidebarClose">&#11164;</button>
+            <!-- ✕ -->
+            <div class="sidebar-user-info" id="sidebarUserInfo">
+                <div class="name">Alex meian</div>
+                <div class="role">Product manager</div>
+            </div>
+            <button class="create-project">
+                <span>
+                    <p> +</p>
+                </span>
+                <p>Create new project</p>
+            </button>
+
+            <div class="menu-item active">
+                <i>📊</i> Dashboard
+            </div>
+            <div class="menu-item">
+                <i>📁</i> Projects
+            </div>
+            <div class="menu-item">
+                <i>📝</i> Tasks
+            </div>
+            <div class="menu-item">
+                <i>📊</i> Dashboard
+            </div>
+            <div class="menu-item">
+                <i>🔔</i>Notifications
+            </div>
+            <div class="menu-item">
+                <i>⏱️</i> Time log
+            </div>
+            <div class="menu-item">
+                <i>🔄</i> Resource mgmt
+            </div>
+            <div class="menu-item">
+                <i>👥</i> Users
+            </div>
+            <div class="menu-item">
+                <i>📋</i> Project template
+            </div>
+            <div class="menu-item">
+                <i>⚙️</i> Menu settings
+            </div>
+            <div class="menu-item"><i></i>Account Settings</div>
+            <div class="menu-item"><i></i>Get Support</div>
+            <div class="menu-item"><i></i>Logout</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <div class="header">
+                <h1>Dashboard</h1>
+                <div class="left">
+                    <div class="search-bar">
+                        <span>&#x1F50E;&#xFE0E;</span>
+                        <input type="text" placeholder="Search for anything...">
+                    </div>
+                    <div class="notification">🔔</div>
+                    <div class="notification-popover">
+                        <div class="popover-content">
+                            <p>No new notifications</p>
+                        </div>
+                    </div>
+                    <div class="user-profile">
+                        <div style="padding: 5px; font-size: 20px;">👤</div>
+                        <div class="user-info" id="userInfo">
+                            <div class="name">Alex meian</div>
+                            <div class="role">Product manager</div>
+                            <div class="popover" id="userPopover">
+                                <div class="popover-option" id="accountSettings">Account Settings</div>
+                                <div class="popover-option" id="getSupport">Get Support</div>
+                                <div class="popover-option" id="logout">Logout</div>
+                            </div>
+                        </div>
+                        <i>▼</i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overflow-container">
+                <div class="overview">
+                    <div class="overview-title">
+                        <h2>Overview</h2>
+                        <div>
+                            <select class="filter-button">
+                                <option value="">Last 30 days</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="cards-container">
+                        <div class="card">
+                            <div class="card-icon" style="background-color: #e9d5ff;">📈</div>
+                            <div class="card-title">Total revenue</div>
+                            <div class="card-value">$530,098.9</div>
+                            <div class="card-trend up">↑ 12% increase from last month</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon" style="background-color: #ffcebf;">📂</div>
+                            <div class="card-title">Projects</div>
+                            <div class="card-value">95 <span>/100</span></div>
+                            <div class="card-trend down">↓ 10% decrease from last month</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon" style="background-color: #c2e3ff;">⏱️</div>
+                            <div class="card-title">Time spent</div>
+                            <div class="card-value">1022 <span>/1300 Hrs</span></div>
+                            <div class="card-trend up">↑ 8% increase from last month</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-icon" style="background-color: #ffe8c2;">👤</div>
+                            <div class="card-title">Resources</div>
+                            <div class="card-value">101 <span>/120</span></div>
+                            <div class="card-trend up">↑ 2% increase from last month</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="middle-section">
+                    <div class="project-summary">
+                        <div class="summary-header">
+                            <div class="summary-title">Project summary</div>
+                            <div class="filter-buttons">
+                                <select class="filter-button">
+                                    <option value="">Project</option>
+                                </select>
+                                <select class="filter-button">
+                                    <option value="">Project manager</option>
+                                </select>
+                                <select class="filter-button">
+                                    <option value="">Status</option>
+                                    <option value="">Completed</option>
+                                    <option value="">Delayed</option>
+                                    <option value="">On going</option>
+                                    <option value="">At risk</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-section">
+                            <table class="project-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Project manager</th>
+                                        <th>Due date</th>
+                                        <th>Status</th>
+                                        <th>Progress</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Nelsa web developement</td>
+                                        <td>Om prakash sao</td>
+                                        <td>May 25, 2023</td>
+                                        <td><span class="status-badge status-completed">Completed</span></td>
+                                        <td>
+                                            <div class="progress-circle">
+                                                <svg>
+                                                    <circle class="progress-bg" cx="20" cy="20" r="15" />
+                                                    <circle class="progress-value" cx="20" cy="20" r="15"
+                                                        style="stroke: #28a745;" />
+                                                </svg>
+                                                <span class="progress-text">100%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Datascale AI app</td>
+                                        <td>Neilsan mando</td>
+                                        <td>Jun 20, 2023</td>
+                                        <td><span class="status-badge status-delayed">Delayed</span></td>
+                                        <td>
+                                            <div class="progress-circle">
+                                                <svg>
+                                                    <circle class="progress-bg" />
+                                                    <circle class="progress-value"
+                                                        style="stroke: #ffc107; --finalOffset: 65;" />
+                                                </svg>
+                                                <span class="progress-text">35%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Media channel branding</td>
+                                        <td>Tiruvelly priya</td>
+                                        <td>July 13, 2023</td>
+                                        <td><span class="status-badge status-risk">At risk</span></td>
+                                        <td>
+                                            <div class="progress-circle">
+                                                <svg>
+                                                    <circle class="progress-bg" />
+                                                    <circle class="progress-value"
+                                                        style="stroke: #dc3545; --finalOffset: 85;" />
+                                                </svg>
+                                                <span class="progress-text">15%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Corlax iOS app develpoement</td>
+                                        <td>Matte hannery</td>
+                                        <td>Dec 20, 2023</td>
+                                        <td><span class="status-badge status-completed">Completed</span></td>
+                                        <td>
+                                            <div class="progress-circle">
+                                                <svg>
+                                                    <circle class="progress-bg" />
+                                                    <circle class="progress-value"
+                                                        style="stroke: #28a745; --finalOffset: 0;" />
+                                                </svg>
+                                                <span class="progress-text">100%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Website builder developement</td>
+                                        <td>Sukumar rao</td>
+                                        <td>Mar 15, 2024</td>
+                                        <td><span class="status-badge status-ongoing">On going</span></td>
+                                        <td>
+                                            <div class="progress-circle">
+                                                <svg>
+                                                    <circle class="progress-bg" />
+                                                    <circle class="progress-value"
+                                                        style="stroke: #fd7e14; --finalOffset: 50;" />
+                                                </svg>
+                                                <span class="progress-text">50%</span>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+                    <div class="progress-section">
+                        <div class="summary-header">
+                            <div class="summary-title">Overall Progress</div>
+                            <div class="filter-buttons">
+                                <select class="filter-button">
+                                    <option value="all">All</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="overall-progress">
+                            <div class="gauge-container">
+                                <svg class="gauge" viewBox="0 0 200 100">
+                                    <!-- Background path (Grey for remaining) -->
+                                    <path d="M20,90 A70,70 0 0,1 180,90" fill="none" stroke="#ddd" stroke-width="5"
+                                        stroke-linecap="round" />
+
+                                    <!-- Completed (Green) -->
+                                    <path id="gauge-completed" d="M20,90 A70,70 0 0,1 180,90" fill="none"
+                                        stroke="#28a745" stroke-width="5" stroke-dasharray="70 200"
+                                        stroke-linecap="round" stroke-dashoffset="0" />
+
+                                    <!-- Ongoing (Yellow) -->
+                                    <path id="gauge-ongoing" d="M20,90 A70,70 0 0,1 180,90" fill="none" stroke="#ffc107"
+                                        stroke-width="5" stroke-dasharray="86 150" stroke-linecap="round"
+                                        stroke-dashoffset="-70" />
+
+                                    <!-- Delayed (Orange) -->
+                                    <path id="gauge-delayed" d="M20,90 A70,70 0 0,1 180,90" fill="none" stroke="#ff9800"
+                                        stroke-width="5" stroke-dasharray="90 156" stroke-linecap="round"
+                                        stroke-dashoffset="-140" />
+
+                                </svg>
+                                <div class="gauge-value">
+                                    <div class="value">72%</div>
+                                    <div class="label">Completed</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stats-container">
+                            <div class="stat-item">
+                                <div class="stat-value">95</div>
+                                <div class="stat-label">Total projects</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value completed">26</div>
+                                <div class="stat-label">Completed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value delayed">35</div>
+                                <div class="stat-label">Delayed</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value ongoing">35</div>
+                                <div class="stat-label">On going</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tasks-section">
+                    <div class="today-tasks">
+                        <div class="tasks-header">
+                            <div class="tasks-title">Today task</div>
+                        </div>
+                        <div class="task-tabs">
+                            <div class="task-tab active">All <span class="task-count">10</span></div>
+                            <div class="task-tab">Important</div>
+                            <div class="task-tab">Notes <span class="task-count">05</span></div>
+                            <div class="task-tab">Links <span class="task-count">10</span></div>
+                        </div>
+                        <ul class="task-list">
+                            <li class="task-item">
+                                <div style="display: flex; align-items: center;">
+                                    <div class="task-check">✓</div>
+                                    <div class="task-content">Create a user flow of social application design</div>
+                                </div>
+                                <span class="status-badge status-completed">Approved</span>
+                            </li>
+                            <li class="task-item">
+                                <div style="display: flex; align-items: center;">
+                                    <div class="task-check">✓</div>
+                                    <div class="task-content">Create a user flow of social application design</div>
+                                </div>
+                                <span class="status-badge status-risk">In review</span>
+                            </li>
+                            <li class="task-item">
+                                <div style="display: flex; align-items: center;">
+                                    <div class="task-check">✓</div>
+                                    <div class="task-content">Landing page design for Fintech project of singapore</div>
+                                </div>
+                                <span class="status-badge status-risk">In review</span>
+                            </li>
+                            <li class="task-item">
+                                <div style="display: flex; align-items: center;">
+                                    <div class="task-check" style="background-color: white; color: black;"> </div>
+                                    <div class="task-content">Interactive prototype for app screens of deltamine project
+                                    </div>
+                                </div>
+                                <span class="status-badge status-ongoing">On going</span>
+                            </li>
+                            <li class="task-item">
+                                <div style="display: flex; align-items: center;">
+                                    <div class="task-check">✓</div>
+                                    <div class="task-content">Interactive prototype for app screens of deltamine project
+                                    </div>
+                                </div>
+                                <span class="status-badge status-completed">Approved</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="projects-workload">
+                        <div class="tasks-header">
+                            <div class="tasks-title">Projects Workload</div>
+                            <select class="select-time-filter">
+                                <option>Last 3 months</option>
+                                <option>Last 6 months</option>
+                                <option>Last year</option>
+                            </select>
+                        </div>
+                        <div class="workload-container">
+                            <div class="workload-column">
+                                <div class="circle-stack">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle filled">07</div>
+                                </div>
+                            </div>
+                            <div class="workload-column">
+                                <div class="circle-stack">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle orange">10</div>
+                                </div>
+                            </div>
+                            <div class="workload-column">
+                                <div class="circle-stack">
+                                    <div class="circle "></div>
+                                    <div class="circle filled">02</div>
+                                </div>
+                            </div>
+                            <div class="workload-column">
+                                <div class="circle-stack">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle filled">08</div>
+                                </div>
+                            </div>
+                            <div class="workload-column">
+                                <div class="circle-stack">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle filled">04</div>
+                                </div>
+                            </div>
+                            <div class="workload-column">
+                                <div class="circle-stack">
+                                    <div class="circle"></div>
+                                    <div class="circle filled">02</div>
+                                </div>
+                            </div>
+                            <div class="workload-column">
+                                <div class="workload-number"></div>
+                                <div class="circle-stack">
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle"></div>
+                                    <div class="circle filled">04</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+
+<div class="project-popup" id="projectPopup">
+    <div class="popup-content">
+        <div class="popup-header">
+            <h3>Create New Project</h3>
+            <span class="close-popup">&times;</span>
+        </div>
+        <div class="popup-body">
+            <form id="createProjectForm">
+                <div class="form-group">
+                    <label for="projectName">Project Name</label>
+                    <input type="text" id="projectName" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectManager">Project Manager</label>
+                    <input type="text" id="projectManager" required>
+                </div>
+                <div class="form-group">
+                    <label for="projectDescription">Description</label>
+                    <textarea id="projectDescription" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="projectDuedate">Due Date</label>
+                    <input type="date" id="projectDuedate">
+                </div>
+                <div class="form-group">
+                    <label for="projectCategory">Category</label>
+                    <select id="projectCategory">
+                        <option value="">Select a category</option>
+                        <option value="design">Design</option>
+                        <option value="development">Development</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="research">Research</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-btn">Create Project</button>
+            </form>
+        </div>
+    </div>
+</div>
